@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
     
-# 参考资料
+# References
 
 ## [官方网站](https://www.rust-lang.org/)
 

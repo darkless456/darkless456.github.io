@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
     
-# 术语释义
+# Glossary
 
 表 1 网络
 

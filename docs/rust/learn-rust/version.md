@@ -1,8 +1,8 @@
 ---
-sidebar_position: 13
+sidebar_position: 3
 ---
     
-# Rust 版本
+# Rust Version
 
 Edition Guide 官方英文版本：
 
