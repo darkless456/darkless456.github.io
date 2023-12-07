@@ -34,12 +34,11 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/docs',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+          exclude: ['README.md'],
+          lastVersion: 'current',
+         },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -61,10 +60,16 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'My Learning',
+          label: 'Learning',
         },
         // {
-        //   href: 'https://github.com/darkless456/my-learning',
+        //   type: 'doc',
+        //   docId: 'index',
+        //   position: 'left',
+        //   label: 'Tools',
+        // },
+        // {
+        //   href: 'https://github.com/darkless456',
         //   label: 'GitHub',
         //   position: 'right',
         // },
