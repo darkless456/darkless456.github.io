@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
     
-<small style="color: #ccc;">last modified at 2023/12/7 8:54:31</small>
+<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
 # Rust 的基本语法
 
 ## 变量
