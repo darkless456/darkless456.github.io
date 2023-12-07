@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-<small color="#ccc">last modified at 2023/12/7 8:49:38</small>
+<small style="color: #ccc;">last modified at 2023/12/7 8:54:31</small>
 # RBAC
 
 Role Based Access Control, 基于角色的访问控制。
