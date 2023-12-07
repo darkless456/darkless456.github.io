@@ -1,8 +1,8 @@
 ---
-sidebar_position: 11
+sidebar_position: 5
 ---
     
-# 安装 Rust
+# Install Rust
 
 ## 在线使用 Rust
 

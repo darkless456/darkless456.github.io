@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 6
 ---
     
-# 项目布局
+# Project Layout
 
 ## 目录组成
 

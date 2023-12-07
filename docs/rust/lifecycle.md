@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-# Rust 声明周期
+# Rust Lifecycle
 
 ## 一些要点
 

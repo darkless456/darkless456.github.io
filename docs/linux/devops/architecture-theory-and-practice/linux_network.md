@@ -1,8 +1,8 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 ---
     
-#  Linux 内核网络
+#  Linux Network
 
 ## 网络请求处理
 

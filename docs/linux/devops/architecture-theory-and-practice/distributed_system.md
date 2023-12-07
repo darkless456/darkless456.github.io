@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 7
 ---
     
-# 分布式系统
+# Distributed System
 
 ## 数据一致性（刚性事务）
 

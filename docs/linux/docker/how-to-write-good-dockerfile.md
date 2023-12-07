@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-# Dockerfile Tips
+# Dockerfile Writing Tips
 
 ## 目的
 

@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
     
-# JavaScript 原型链和继承
+# JavaScript Prototype
 
 ## 概述
 

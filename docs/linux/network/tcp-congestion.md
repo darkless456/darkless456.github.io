@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-# TCP 拥塞控制之基础
+# TCP Congestion
 
 ## TCP 设计初衷
 

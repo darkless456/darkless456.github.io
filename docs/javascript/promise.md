@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 4
 ---
     
-# Promise
+# JavaScript Promise
 
 ## Callback 方式
 

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-# BLE 技术
+# Bluetooth Low Energy
 
 `BLE 是低功耗蓝牙的英文缩写，是蓝牙4.0版本开始支持的技术规范`
 

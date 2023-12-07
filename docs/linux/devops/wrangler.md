@@ -1,18 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
     
-# 本地开发 Cloudflare Workers
+# Cloudflare Workers
 
-## 什么是 Cloudflare Workers
-
-官网介绍
-
-> Cloudflare Workers provides a serverless execution environment that allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure.
-
-Cloudflare Workers 提供了一个完全自动化的服务器端执行环境，可以让你创建完全新的应用程序或者增强现有的应用程序，而不需要配置或维护基础设施。
-
-相当于腾讯云的云函数一类的服务。
+Cloudflare Workers provides a serverless execution environment that allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure.
 
 ## Wrangler-CLI
 

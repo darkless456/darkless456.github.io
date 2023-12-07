@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-# 现代浏览器的缓存机制
+# Cache In Modern Browser
 
 ## **HTTP 文件缓存**
 
