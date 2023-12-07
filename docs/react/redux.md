@@ -2,6 +2,7 @@
 sidebar_position: 2
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:49:38</small>
 # Redux Tutorial
 
 Redux is a predictable state container for JS Apps.

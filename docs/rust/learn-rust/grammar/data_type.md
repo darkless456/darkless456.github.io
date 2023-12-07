@@ -1,7 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:49:38</small>
 # 基本数据类型
 
 ## 整型
