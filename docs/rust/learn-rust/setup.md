@@ -1,7 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 12
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:49:38</small>
 # Install Rust
 
 ## 在线使用 Rust

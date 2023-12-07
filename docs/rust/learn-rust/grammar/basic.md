@@ -1,7 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:49:38</small>
 # Rust 的基本语法
 
 ## 变量

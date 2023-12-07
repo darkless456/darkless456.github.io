@@ -2,6 +2,7 @@
 sidebar_position: 1
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:49:38</small>
 # Learn Rust
 
 ## 介绍
