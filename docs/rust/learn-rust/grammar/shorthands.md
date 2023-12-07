@@ -1,7 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 2
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:44:3</small>
 # 语法速记
 
 ```rs

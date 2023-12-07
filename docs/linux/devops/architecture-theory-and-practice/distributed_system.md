@@ -2,6 +2,7 @@
 sidebar_position: 7
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:44:3</small>
 # Distributed System
 
 ## 数据一致性（刚性事务）

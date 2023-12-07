@@ -1,7 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:44:3</small>
 # Rust Version
 
 Edition Guide 官方英文版本：

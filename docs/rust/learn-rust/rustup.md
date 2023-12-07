@@ -1,7 +1,8 @@
 ---
-sidebar_position: 9
+sidebar_position: 3
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:44:3</small>
 # Rustup
 
 ## 概述

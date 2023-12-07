@@ -1,7 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
     
+<small color="#ccc">last modified at 2023/12/7 8:44:3</small>
 # Cache In Modern Browser
 
 ## **HTTP 文件缓存**
