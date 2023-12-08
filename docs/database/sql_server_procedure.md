@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # The SQL Server Procedure
 
 ## 规范
@@ -40,4 +39,6 @@ GO
 CREATE [dbo].[users]
 
 ```
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

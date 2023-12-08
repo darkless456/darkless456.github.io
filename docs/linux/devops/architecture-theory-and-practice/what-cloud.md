@@ -2,7 +2,6 @@
 sidebar_position: 7
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Cloud Native
 
 ## 为什么上云
@@ -152,4 +151,6 @@ Loosely Coupled and Bounded Contexts
 - 监控：Grafana、Prometheus
 - 应用开发：Nocalhost
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

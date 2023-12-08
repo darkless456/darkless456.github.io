@@ -2,7 +2,6 @@
 sidebar_position: 7
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Explain `this` with Rules
 
 ## Reference
@@ -138,4 +137,6 @@ foo.bar();
 (foo.bar, foo.bar)();
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

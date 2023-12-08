@@ -2,7 +2,6 @@
 sidebar_position: 3
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # State Machine
 
 定义：
@@ -23,4 +22,6 @@ sidebar_position: 3
 
 图灵机也可以抽象为一个状态机，它是计算机底层采用的计算模型
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

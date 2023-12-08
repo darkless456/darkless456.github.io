@@ -2,7 +2,6 @@
 sidebar_position: 3
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Glossary
 
 表 1 网络
@@ -62,4 +61,6 @@ sidebar_position: 3
 | P90 | percentile 90  | 数据聚合统计方式，用来衡量业务指标 |
 | QA | Quality Assurance | 品质保证|
 | SLA | Service Level Agreement | 服务等级协议，用于向客户承诺提供的服务等级 | 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

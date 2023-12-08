@@ -2,7 +2,6 @@
 sidebar_position: 8
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Modules
 
 ## 概述
@@ -448,4 +447,6 @@ fn main() {
 
 - 按文件分割代码，我们应该在一个文件的`父级`中声明模块，而不是文件本身
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

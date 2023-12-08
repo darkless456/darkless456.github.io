@@ -2,7 +2,6 @@
 sidebar_position: 5
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # TCP Congestion
 
 ## TCP 设计初衷
@@ -149,4 +148,6 @@ EFS 发送端认为正在向接收端发送的报文数
 
 引入新的变量 recover，当进入快速恢复时，收到重复的 ACK，将 recover 设置为已经发送的最后报文的序号。如果之后收到的新的 ACK 需要不超过 recover，说明还是同一个丢包引起的。
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

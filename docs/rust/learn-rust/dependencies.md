@@ -2,7 +2,6 @@
 sidebar_position: 7
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Dependencies
 
 - Cargo.toml 描述依赖信息，由开发者编写。
@@ -311,4 +310,6 @@ baz = { version = "0.1", registry = "custom", package = "test" }
 
 `package` 为真实 crate 的名字，如不指定，默认使用依赖项名称。
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

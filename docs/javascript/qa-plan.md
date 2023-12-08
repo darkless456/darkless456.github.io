@@ -2,7 +2,6 @@
 sidebar_position: 6
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # QA Plan
 
 ## 质量维度
@@ -31,4 +30,6 @@ sidebar_position: 6
 
 集成测试，多个组件的交互，甚至整个系统，保证逻辑和表示层面。工具例如：puppeteer，jest
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

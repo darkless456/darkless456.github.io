@@ -2,7 +2,6 @@
 sidebar_position: 6
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 17:13</small>
 # 集合数据
 
 ## 字符串
@@ -419,4 +418,6 @@ assert_eq!(heap.pop(), Some(Reverse(5)));
 assert_eq!(heap.pop(), None);
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 17:13</small></div>
       

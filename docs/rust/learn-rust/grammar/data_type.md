@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # 基本数据类型
 
 ## 整型
@@ -419,4 +418,6 @@ let home = IpAddr::V4(127, 0, 0, 1);
 
 - fn(String) -> IpAddr
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

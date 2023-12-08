@@ -2,7 +2,6 @@
 sidebar_position: 4
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 17:59</small>
 # macvlan
 
 ## macvlan 是什么
@@ -33,4 +32,6 @@ macvlan 可以直接在容器内创建依附于物理网卡的虚拟网卡
 | 与宿主机直接通信 | No | No | No | No |
 | 通过外部（Hairpin）交换机通信 | | 虚拟网卡与物理网卡皆可 | No | 独占物理物理网卡 |
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 17:59</small></div>
       

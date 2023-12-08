@@ -2,7 +2,6 @@
 sidebar_position: 4
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 8, 2023 14:31</small>
 # Solutions for Crossing Tab Communication
 
 在浏览器中，不同窗口（包括不同标签页、不同浏览器实例）之间进行数据交换的能力。
@@ -135,4 +134,6 @@ testBtn.addEventListener('click', () => {
 2. 所有前端都会连接服务端的消息转发服务
 3. 服务端接收来自某个前端的消息后，将该消息转发给其他前端
 4. 前端接收到下发的消息后做后续处理
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 8, 2023 14:31</small></div>
       

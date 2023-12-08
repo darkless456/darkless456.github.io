@@ -2,7 +2,6 @@
 sidebar_position: 4
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # JavaScript Promise
 
 ## Callback 方式
@@ -148,4 +147,6 @@ ajax()
   promises-aplus-tests promise.js
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

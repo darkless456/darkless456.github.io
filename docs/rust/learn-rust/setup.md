@@ -2,7 +2,6 @@
 sidebar_position: 12
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Install Rust
 
 ## 在线使用 Rust
@@ -80,4 +79,6 @@ $ rustup default nightly
 $ rustup default stable
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

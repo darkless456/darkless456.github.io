@@ -2,7 +2,6 @@
 sidebar_position: 4
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Internet Network
 
 ## HTTPS 请求阶段分析
@@ -302,4 +301,6 @@ QUIC 的特点
 - 多区域，多节点 QUIC 连接复用和迁移
 - 能耗比如何与 TCP 一样
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

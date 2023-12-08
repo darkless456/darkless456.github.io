@@ -2,7 +2,6 @@
 sidebar_position: 4
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Rustup
 
 ## 概述
@@ -153,4 +152,6 @@ TBC
 
 [The Rustup Book](https://rust-lang.github.io/rustup/index.html)
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

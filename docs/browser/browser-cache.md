@@ -2,7 +2,6 @@
 sidebar_position: 3
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Cache In Modern Browser
 
 ## **HTTP 文件缓存**
@@ -78,4 +77,6 @@ sidebar_position: 3
 - 网页端 Flash 具有读写本地文件能力
 - JS 可以调用 Flash 提供的 API
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

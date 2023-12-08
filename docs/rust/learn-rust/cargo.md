@@ -2,7 +2,6 @@
 sidebar_position: 6
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Cargo Tool
 
 ## 概述
@@ -230,4 +229,6 @@ $ cd rand
 
 然后使用 `cargo build` 构建即可。这将获取所有的依赖项，然后与程序包一起构建。
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

@@ -2,7 +2,6 @@
 sidebar_position: 3
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # 流程控制
 
 ## if
@@ -174,4 +173,6 @@ while let Some(x) = v.pop() {
 }
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

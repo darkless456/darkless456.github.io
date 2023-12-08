@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Dockerfile
 
 ## 基本格式
@@ -143,4 +142,6 @@ Notes：
   CMD ["param1"]
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

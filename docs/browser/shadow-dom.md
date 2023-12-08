@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 17:13</small>
 # Shadow DOM
 
 ![Shadow dom](./assets/shadow-dom.png)
@@ -264,4 +263,6 @@ HTML 内容模板（<template>）元素是一种用于保存客户端内容机�
 
 > 示例参考 [MDN](https://github.com/mdn/web-components-examples)
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 17:13</small></div>
       

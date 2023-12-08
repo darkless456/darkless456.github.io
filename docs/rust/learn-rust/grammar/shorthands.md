@@ -2,7 +2,6 @@
 sidebar_position: 5
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # 语法速记
 
 ```rs
@@ -82,4 +81,6 @@ fn true_maker() -> fn() -> bool { is_true }    /// 函数的返回值是另外�
 let box_point = Box::new(Point { x: 0.0, y: 0.0 });  // 智能指针
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

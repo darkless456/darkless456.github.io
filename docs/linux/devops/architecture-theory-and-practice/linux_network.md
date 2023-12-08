@@ -2,7 +2,6 @@
 sidebar_position: 5
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 #  Linux Network
 
 ## 网络请求处理
@@ -255,4 +254,6 @@ DPDK 基于内核旁路的方式， 数据从 网卡 ==》DPDK 轮询模式 ==�
   <img src="./assets/dpdk-71bf2147.png" />
   <p>DPDK 与 传统内核网络</p>
 </div>
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

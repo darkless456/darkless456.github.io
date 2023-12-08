@@ -2,7 +2,6 @@
 sidebar_position: 9
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Project Layout
 
 ## 目录组成
@@ -28,4 +27,6 @@ sidebar_position: 9
   ▾ */           # （可选）包含多文件基准的目录
     main.rs
 ```
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Redux Tutorial
 
 Redux is a predictable state container for JS Apps.
@@ -258,4 +257,6 @@ Using Redux with any UI layer requires a few consistent steps:
 [Redux - Complete Tutorial by Cosden Solutions](https://www.youtube.com/watch?v=5yEG6GhoJBs)
 
 [Redux Official](https://redux.js.org/introduction/getting-started)
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

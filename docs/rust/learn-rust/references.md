@@ -2,7 +2,6 @@
 sidebar_position: 10
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # References
 
 ## [官方网站](https://www.rust-lang.org/)
@@ -76,4 +75,6 @@ sidebar_position: 10
 - [async graphql](https://github.com/async-graphql/async-graphql)
 
 - [mini redis](https://github.com/tokio-rs/mini-redis)
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

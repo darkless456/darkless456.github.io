@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Rust 的基本语法
 
 ## 变量
@@ -205,4 +204,6 @@ pub fn annotation() {
 >
 > 当您同时考虑错误和成功路径时，相对于 Exception，C 处理错误的方法具有出色的性能和代码大小，这就是为什么系统代码非常喜欢它的原因。然而，它的人机工程学和安全性很差，Rust 用 Result 来解决。Rust 的方法形成了一种混合体，旨在实现 C 错误处理的性能，同时消除其陷阱。
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

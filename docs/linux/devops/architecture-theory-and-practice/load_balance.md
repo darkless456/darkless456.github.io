@@ -2,7 +2,6 @@
 sidebar_position: 6
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Load Balance
 
 负载均衡是构建可靠的分布式系统的核心概念之一，核心职责是“选择谁来处理请求”和“将请求转发过去”。
@@ -215,4 +214,6 @@ upstream backend {
 - 随机
 
 当后端服务器处理不同时，需要引入**权重**进行调度中的加权计算。
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

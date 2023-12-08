@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 17:13</small>
 # TCP Fast Open
 
 ![TFO](./assets/tfo.png)
@@ -51,4 +50,6 @@ Server 为首次发起连接的 Client（以源 IP 区分）发放专属的通�
 
 Cookie 通过 TCP 选项在两端交互，值由 Server 根据 `<ClientIP、ServerIP>` 生成。与 TCP 端口号无关，是主机级别的
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 17:13</small></div>
       

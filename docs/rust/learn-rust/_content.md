@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Learn Rust
 
 ## 介绍
@@ -51,4 +50,6 @@ sidebar_position: 1
 
 ## 所有权
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

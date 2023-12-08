@@ -2,7 +2,6 @@
 sidebar_position: 3
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Cloudflare Workers
 
 Cloudflare Workers provides a serverless execution environment that allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure.
@@ -136,4 +135,6 @@ Cloudflare 虽然提供了线上调试的环境，但本地开发还可以结合
 
 - [官网文档](https://developers.cloudflare.com/workers/)
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

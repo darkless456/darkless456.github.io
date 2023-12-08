@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Abstract Syntax Tree
 
 ## What's the AST
@@ -191,4 +190,6 @@ scanner 和分词器的工作，构成编译器的词法分析阶段
 
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

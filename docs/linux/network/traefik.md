@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Traefik Proxy
 
 ![traefik architecture](./assets/traefik-architecture.png)
@@ -213,4 +212,6 @@ Traefik 自带 Dashboard
 
 [一文搞懂 Traefik2.1 的使用](https://www.qikqiak.com/post/traefik-2.1-101/)
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

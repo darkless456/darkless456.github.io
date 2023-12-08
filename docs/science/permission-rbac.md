@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # RBAC
 
 Role Based Access Control, 基于角色的访问控制。
@@ -154,4 +153,6 @@ enum Permission {
 
 ![permissions structure](./assets/permissions-structure.png)
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Distributed System
 
 ## 数据一致性（刚性事务）
@@ -138,4 +137,6 @@ ABA 问题，指后面发起的操作结果被前面操作重试所产生的结�
 - Paxos 算法
 - Raft 算法
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Bluetooth Low Energy
 
 `BLE 是低功耗蓝牙的英文缩写，是蓝牙4.0版本开始支持的技术规范`
@@ -179,4 +178,6 @@ GATT_Notification(0xFFF2,"1234",4)
 
 主机和从机都可以发起断开连接请求，对方收到后会断开连接恢复为未连接状态
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

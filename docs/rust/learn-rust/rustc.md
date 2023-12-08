@@ -2,7 +2,6 @@
 sidebar_position: 11
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Rustc Compiler
 
 ## 概述
@@ -424,4 +423,6 @@ fn bewitched() {}
 
 如果 magic 通过 cfg 属性设置了值这与 #[sparkles]/#[crackles] 相同，否则不起作用。
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

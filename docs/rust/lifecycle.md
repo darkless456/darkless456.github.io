@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Rust Lifecycle
 
 ## 一些要点
@@ -29,4 +28,6 @@ Rust中的变量和值，变量和数据，这两种说法是不同的，值不�
 例如，let v = String::from("hello");，变量v的值是一个String类型的值，String类型内部一个Vec，总的来说它的值是一个Struct，其值保存在栈中，这个Struct中有一个指针指向堆中的数据，堆中的数据其字符数据部分(即hello的每一个字符)拷贝自于全局内存段。当v被释放时，Struct被Drop，Drop的时候会将堆中的内存也释放，这是Vec实现Drop时决定的。
 ```
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

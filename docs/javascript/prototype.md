@@ -2,7 +2,6 @@
 sidebar_position: 5
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # JavaScript Prototype
 
 ## 概述
@@ -169,4 +168,6 @@ let foo = new Foo();
 
 - 设置对象非标准的 `__proto__`，优点：新的原型不是对象时会失败，不报错；缺点：同上，干扰解释器优化
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

@@ -2,7 +2,6 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 6, 2023 16:49</small>
 # Rust Lint
 
 ## 概述
@@ -208,4 +207,6 @@ warning: this expression will panic at run-time
 
 [Rustc 手册](https://learnku.com/docs/rustc-book/2020/31-lint-levels/8862)
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 6, 2023 16:49</small></div>
       

@@ -2,7 +2,6 @@
 sidebar_position: 13
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Rust Version
 
 Edition Guide 官方英文版本：
@@ -15,4 +14,6 @@ Edition Guide 官方英文版本：
 
 备注：建议尽可能使用英文版，更新及时。
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       

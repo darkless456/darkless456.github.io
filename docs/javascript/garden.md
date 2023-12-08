@@ -2,7 +2,6 @@
 sidebar_position: 3
 ---
     
-<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # JavaScript Secret Garden
 
 ## 对象
@@ -756,4 +755,6 @@ button.onclick = () => void doSomething(); // 右边箭头函数的返回值始�
 
 - 由于 JS 单线程的运行方式，`setTimeout` 无法保证在指定的时刻运行代码。
 
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 7, 2023 16:56</small></div>
       
