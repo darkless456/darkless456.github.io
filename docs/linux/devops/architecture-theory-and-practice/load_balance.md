@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
     
-<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
+<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Load Balance
 
 负载均衡是构建可靠的分布式系统的核心概念之一，核心职责是“选择谁来处理请求”和“将请求转发过去”。
