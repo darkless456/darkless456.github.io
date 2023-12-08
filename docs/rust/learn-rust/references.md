@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
     
-<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
+<small style={{color: '#cccccc'}}>last modified at December 7, 2023 8:56 AM</small>
 # References
 
 ## [官方网站](https://www.rust-lang.org/)

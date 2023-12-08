@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
     
-<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
+<small style={{color: '#cccccc'}}>last modified at December 7, 2023 8:56 AM</small>
 # Rustc Compiler
 
 ## 概述
