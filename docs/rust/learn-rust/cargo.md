@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
+<small style={{color: '#cccccc'}}>last modified at December 7, 2023 08:56 AM</small>
 # Cargo Tool
 
 ## 概述

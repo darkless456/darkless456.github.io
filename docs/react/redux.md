@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
     
-<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
+<small style={{color: '#cccccc'}}>last modified at December 6, 2023 08:49 AM</small>
 # Redux Tutorial
 
 Redux is a predictable state container for JS Apps.
