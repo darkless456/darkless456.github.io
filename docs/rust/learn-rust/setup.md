@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
     
-<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
+<small style={{color: '#cccccc'}}>last modified at December 7, 2023 16:56</small>
 # Install Rust
 
 ## 在线使用 Rust
