@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
     
-<small style={{color: '#cccccc'}}>last modified at 2023/12/7 8:56:46</small>
+<small style={{color: '#cccccc'}}>last modified at December 8, 2023 7:10 AM</small>
 # 语法速记
 
 ```rs
