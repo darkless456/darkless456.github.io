@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -38,7 +38,12 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           exclude: ['README.md'],
           lastVersion: 'current',
-         },
+        },
+        blog: {
+          routeBasePath: '/blog',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -62,12 +67,11 @@ const config: Config = {
           position: 'left',
           label: 'Learning',
         },
-        // {
-        //   type: 'doc',
-        //   docId: 'index',
-        //   position: 'left',
-        //   label: 'Tools',
-        // },
+        {
+          to: 'blog',
+          label: 'Blog',
+          position: 'left'
+        }
         // {
         //   href: 'https://github.com/darkless456',
         //   label: 'GitHub',
