@@ -63,20 +63,27 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'learningNoteSidebar',
           position: 'left',
-          label: 'Learning',
+          label: 'Docs',
         },
         {
           to: 'blog',
           label: 'Blog',
           position: 'left'
-        }
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'favoriteSidebar',
+          position: 'left',
+          label: 'Favorite',
+        },
         // {
         //   href: 'https://github.com/darkless456',
         //   label: 'GitHub',
         //   position: 'right',
         // },
+        
       ],
     },
     // footer: {
