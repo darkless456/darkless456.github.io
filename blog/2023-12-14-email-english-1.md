@@ -10,7 +10,6 @@ hide_table_of_contents: false
 **Template(absence)**
 
 _Subject: Notice of Upcoming Leave: 19th to 29th Dec 2023_
-<!-- truncate -->
 
 Dear [Course Instructor's Name/Coordinator's Name],
 
@@ -18,6 +17,7 @@ I hope this message finds you well. I would like to inform you that I am schedul
 
 I plan to resume my participation in the course starting on the 2nd of January 2024. I apologize for any inconvenience this may cause and I appreciate your understanding. If any make-up work or additional steps are required upon my return, please let me know so I can address them promptly.
 
+<!-- truncate -->
 Thank you for your attention to this matter and for your support.
 
 Best regards, [Your Name]
