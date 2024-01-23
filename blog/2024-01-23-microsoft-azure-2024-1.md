@@ -10,7 +10,6 @@ hide_table_of_contents: false
 **Answer:** Azure Kubernetes Service (AKS) is a managed container orchestration service provided by Microsoft Azure that simplifies deploying, managing, and scaling containerized applications using Kubernetes. The main benefits of AKS include:
 
 - **Automated Kubernetes Management:** AKS handles critical tasks like version upgrades, patching, and node health monitoring, which reduces the complexity of container management.
-<!-- truncate -->
 - **Integrated Development Experience:** Integrates with Azure DevOps, Visual Studio Code, and Azure Monitor, providing a consistent experience for deployment, management, and monitoring.
 - **Scalability:** Offers easy scalability with its automatic scaling feature, ensuring applications can handle increased loads without manual intervention.
 - **Cost-Efficiency:** Users pay only for the virtual machines and associated storage and networking resources consumed by their Kubernetes cluster.
@@ -18,6 +17,7 @@ hide_table_of_contents: false
 **Question 2: What is the difference between Azure Container Instances (ACI) and Azure Kubernetes Service (AKS)?**
 
 **Answer:** Azure Container Instances (ACI) is a service that offers the quickest and most direct way to run a container in Azure without having to manage any virtual machines or adopt additional services. It is suitable for simple applications, task automation, and CI/CD tasks.
+<!-- truncate -->
 
 On the other hand, Azure Kubernetes Service (AKS) is a more comprehensive container orchestration platform, good for more complex applications that require high availability, auto-scaling, and management of a large number of containers.
 
