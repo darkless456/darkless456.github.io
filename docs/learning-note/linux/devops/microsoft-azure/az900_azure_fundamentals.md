@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
     
 # Azure Fundamentals(AZ-900)
@@ -686,5 +686,5 @@ Azure Monitor is a platform for collecting data on your resources, analyzing tha
 
 ![Monitor](./assets/azure-monitor-overview-614cd2fd.svg)
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at February 2, 2024 15:20</small></div>
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at March 15, 2024 14:47</small></div>
       
