@@ -155,6 +155,85 @@ performance.mark("Movies:updateEnd");
 performance.measure("moviesRender", "Movies:updateStart", "Movies:updateEnd");
 ```
 
+## 152. 精读《recoil》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 3, 2024 17:06</small></div>
+```js
+// 1. 状态作用域
+import { RecoilRoot } from 'recoil';
+function App() {
+  return (
+    <RecoilRoot>
+      <Home />
+    </RecoilRoot>
+  )
+}
+
+// 2. 定义数据
+const textState = atom({
+  key: 'textState',
+  default: '',
+})
+
+
+import { useRecoilValue, useRecoilState, setText } from 'recoil';
+function Home() {
+  // 3. 读取数据
+  const text = useRecoilValue(textState);
+  // or
+  const [text, setText] = useRecoilState(textState);
+  
+  // 4. 只修改数据
+  const setText = useSetRecoilState(textState);
+  // 重置默认值并读取
+  const [text, setText] = useResetRecoilState(textState);
+}
+
+// 5. 仅读不订阅
+useRecoilCallback(async({ getPromise }) => {
+  const result = await getPromise(data);
+  console.log('result', result);
+})
+
+// 6. 派生值
+
+const newTextState = selector({
+  key: 'newTextState',
+  get: ({ get }) => get(textState) + '.ori',
+  set: ({ set }, newValue) => set(textState, newValue + '.new').
+})
+
+// 7. 异步场景，支持 suspense 和 error boundary
+// 如需自己管理loading，可使用 useRecoilValueLoadable 代替
+
+const currentUser = selector({
+  key: 'currentUser',
+  get: async ({ get }) => {
+    const data = await getDataFromApi();
+  },
+})
+
+const currentUserInfo = useRecoilValue(currentUser);
+
+
+// 8. 有外部依赖的场景
+
+const currentUser = selectorFamily({
+  key: 'currentUser',
+  get: (userId) => ({ get }) => { // userId 自动变为外部依赖
+    return get(userInfoState[userId])
+  }
+})
+```
+
+理解：
+1. atom 和 useRecoilXXX 是封装后的 useContext
+2. 派生可以利用 useMemo
+
+一些总结：
+1. 对象读与写分离，按需渲染
+2. 缓存派生值，依赖保证**引用**相等（数据一致性）
+3. 无关联数据原子化，关联数据使用派生值推导
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 3, 2024 23:36</small></div>
       
