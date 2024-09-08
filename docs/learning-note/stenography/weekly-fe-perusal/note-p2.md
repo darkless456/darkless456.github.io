@@ -234,6 +234,66 @@ const currentUser = selectorFamily({
 2. 缓存派生值，依赖保证**引用**相等（数据一致性）
 3. 无关联数据原子化，关联数据使用派生值推导
 
+## 154. 精读《用 React 做按需渲染》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 3, 2024 23:36</small></div>
+```js
+const RenderWhenActive = React.memo(({children}) => children, (prevProps, nextProps) => !nextProps.active);
+
+const ComponentLoader = ({children}) => {
+  const active = useActive(children.id);
+
+  return <RenderWhenActive active={active}>{children}</RenderWhenActive>;
+}
+
+const useActive = (domId: string) => {
+  const [active, setActive] = React.useState(false);
+
+  React.useEffect(() => {
+    const visibleObserver = new VisibleObserver(domId, rootDomId, setActive);
+
+    visibleObserver.observe();
+
+    return () => visibleObserver.unObserve();
+  }, [domId]);
+
+  return active;
+}
+
+abstract class AbstractVisibleObserver{
+  protected targetDomId: string;
+  protected rootDomId: string;
+  protected onActiveChange: (active?: boolean) => void;
+
+  constructor(targetDomId, rootDomId, onActiveChange) {
+    // ...
+  }
+
+  abstract public observe() {}
+  abstract public unObserve() {}
+}
+
+// 轮询 和  浏览器 API
+
+class IntersectionVisibleObserver extends AbstractVisibleObserver {
+  // 使用浏览器提供的能力
+}
+
+class SetIntervalVisibleObserver extends AbstractVisibleObserver {
+  // 定期查询dom 的相对位置，看是否有交集
+}
+
+class VisibleObserver extends AbstractVisibleObserver {
+  constructor(targetDomId, rootDomId, onActiveChange) {
+    if ('IntersectionObserver' in globalThis) { // 判断当前是否支持浏览器 API
+      // IntersectionVisibleObserver
+    } else {
+      // SetIntervalVisibleObserver
+    }
+  }
+}
+
+```
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 8, 2024 23:40</small></div>
       
