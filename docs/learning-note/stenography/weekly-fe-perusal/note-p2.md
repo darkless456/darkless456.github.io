@@ -155,6 +155,24 @@ performance.mark("Movies:updateEnd");
 performance.measure("moviesRender", "Movies:updateStart", "Movies:updateEnd");
 ```
 
+## 15.精读《TC39 与 ECMAScript 提案》
+
+`TC39`, 推动 JS 发展的委员会，由各浏览器厂商代表组成。
+
+标准制定流程：
+
+1. stage0 strawman，新想法，新改变讨论
+2. stage1 proposal，正式提案，潜在问题，规范描述
+3. stage2 draft，初始规范草案，接受增量修改，实验性规范实现
+4. stage3 candidate，获取反馈，提供polyfill 或 babel 插件
+5. stage4 finished，准备发布
+
+查看 TC39 的提案
+- stage0 的提案 https://github.com/tc39/proposals/blob/master/stage-0-proposals.md 
+- stage1 - 4 的提案 https://github.com/tc39/proposals
+
+> 不同阶段的 babel 插件：babel-presets-stage-0 babel-presets-stage-1 babel-presets-stage-2 babel-presets-stage-3 babel-presets-stage-4
+
 ## 152. 精读《recoil》
 
 ```js
@@ -295,5 +313,5 @@ class VisibleObserver extends AbstractVisibleObserver {
 ```
 
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 8, 2024 23:40</small></div>
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 11, 2024 10:52</small></div>
       
