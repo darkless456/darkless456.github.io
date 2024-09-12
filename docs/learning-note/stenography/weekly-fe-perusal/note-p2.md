@@ -312,6 +312,162 @@ class VisibleObserver extends AbstractVisibleObserver {
 
 ```
 
+## 157. 精读《如何比较 Object 对象》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 11, 2024 10:52</small></div>
+1. 引用对比
+  - `===`
+  - `==` 
+  - `Object.is()`
+2. 手动对比，自定义函数，对比obj的某些键值对
+3. 浅对比，对比obj第一层的引用
+4. 深对比，递归对比obj的键值对
+
+## 158. 精读《Typescript 4》
+
+```ts
+// 1. 可变元组类型
+type Arr = readonly any[];
+
+function concat<T extends Arr, U extends Arr>(arr1: T, arr2: U): [...T, ...U] {
+  return [...arr1, ...arr2];
+}
+// 2. 元组标记（函数参数类型定义）
+type Foo = [first: number, second?: string, ...rest: any[]];
+// 3. Class 从构造函数推断成员变量类型（直接赋值），如果是通过函数则可能不会自动识别，需要用 !: 显式声明
+// 4. 短路赋值
+a &&=b; // a && (a = b)
+a ||=b; // a || (a = b)
+a ??=b; // a ?? (a = b)
+// 5. Catch 的 error 可以是 unknown 类型
+// 6. 自定义 JSX 工厂 ？ 自定义 jsx 的解析函数，脱离 react 使用 jsx
+// 7. 其他
+// 支持 @deprecated 注释，局部 TS server 快速启动解析，将 package.json 的中 deps 作为优先导入，不能覆盖父类的 getter 和 setter，delete 删除的属性必须定义为 optional
+```
+
+## 16.精读《CSS Animations vs Web Animations API》
+
+```js
+// web animation
+
+let ele = document.querySelector('.anime');
+const keyframe = [ // 类似 css keyframe
+  { opacity: 0 },
+  { opacity: 1 }
+]；
+const options = {
+  iterations: Infinity, // 动画的重复次数，默认是 1
+  iterationStart: 0, // 用于指定动画开始的节点，默认是 0
+  delay: 0, // 动画延迟开始的毫秒数，默认 0
+  endDelay: 0, // 动画结束后延迟的毫秒数，默认 0
+  direction: 'alternate', // 动画的方向 默认是按照一个方向的动画，alternate 则表示交替
+  duration: 700, // 动画持续时间，默认 0
+  fill: 'forwards', // 是否在动画结束时回到元素开始动画前的状态
+  easing: 'ease-out', // 缓动方式，默认 "linear"
+};
+let animation = ele.animate(keyframe, options);
+
+let animationObj = ele.getAnimation(); // 获取 dom 的 animation 对象
+// 操作 animation 对象
+animationObj.onFinish = function() { /* ... */ } // event 方式
+animationObj.finished.then(() => { /* ... */});  // promise 方式
+```
+
+## 160. 精读《函数缓存》
+
+函数缓存，本质上是用空间（存储空间）换时间（计算过程），比较适合应用于纯函数。
+
+基于参数的函数缓存：
+1. 仅缓存最后一次计算结果，参数变化即缓存失效
+2. 缓存所有计算结果，需注意参数变化数量
+3. 介于 1 和 2 之间的选择，如 LRU 保留最小化最近使用的计算结果（保留热点数据）
+
+```js
+// lodash memorize
+
+function memorize(func, resolver) {
+  // validation code ...
+  
+  // cache
+  var memorized = function() {
+    var key = resolver ? resolver.apply(this, arguments) : arguments[0];
+    var cache = memorized.cache;
+
+    if (cache.get(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, arguments);
+    memorized.cache = cache.set(key, result) || cache; // cache.set(key, result) 执行成功返回新的全量 cache 结果，否则返回原来的 
+    return result;
+  }
+  memorized.cache = new (memorize.Cache || Map)(); // 让用户自定义 cache 所使用的存储结构
+}
+```
+
+## 162.精读《Tasks, microtasks, queues and schedules》
+
+```js
+var outer = document.querySelector(".outer");
+var inner = document.querySelector(".inner");
+
+new MutationObserver(function () {
+  console.log("mutate");
+}).observe(outer, {
+  attributes: true,
+});
+
+function onClick() {
+  console.log("click");
+
+  setTimeout(function () {
+    console.log("timeout");
+  }, 0);
+
+  Promise.resolve().then(function () {
+    console.log("promise");
+  });
+
+  outer.setAttribute("data-random", Math.random());
+}
+
+inner.addEventListener("click", onClick);
+outer.addEventListener("click", onClick);
+```
+
+- 用户点击 inner
+  1. 点击触发 onClick 函数入栈。
+  2. 立即执行 console.log('click') 打印 click。
+  3. console.log('timeout') 入栈 Tasks。
+  4. console.log('promise') 入栈 microtasks。
+  5. outer.setAttribute('data-random') 的触发导致监听者 MutationObserver 入栈 microtasks。
+  6. onClick 函数执行完毕，此时线程调用栈为空，开始执行 microtasks 队列。
+  7. 打印 promise，打印 mutate，此时 microtasks 已空。
+  8. 执行冒泡机制，outer div 也触发 onClick 函数，同理，打印 promise，打印 mutate。
+  9. 都执行完后，执行 Tasks，打印 timeout，打印 timeout。
+
+- 模拟点击 inner.click()
+  1. inner.click() 触发 onClick 函数入栈。
+  2. 立即执行 console.log('click') 打印 click。
+  3. console.log('timeout') 入栈 Tasks。
+  4. console.log('promise') 入栈 microtasks。
+  5. outer.setAttribute('data-random') 的触发导致监听者 MutationObserver 入栈 microtasks。
+  6. **由于冒泡改为 js 调用栈执行，所以此时 js 调用栈未结束，不会执行 microtasks，反而是继续执行冒泡，outer 的 onClick 函数入栈。**
+  7. 立即执行 console.log('click') 打印 click。
+  8. console.log('timeout') 入栈 Tasks。
+  9. console.log('promise') 入栈 microtasks。
+  10. 由于 5 中的 MutationObserver 的回调还没调用，因此这次 outer.setAttribute('data-random') 的改动实际上没有作用。打印结果跟 5 一样
+  11. js 调用栈执行完毕，开始执行 microtasks，按照入栈顺序，打印 promise，mutate，promise。
+  microtasks 执行完毕，开始执行 Tasks，打印 timeout，timeout。
+
+结论：
+1. 同步执行优先级最高
+2. Task（setTimeout）
+  - 顺序执行
+  - 浏览器可能在 Tasks 之间执行渲染
+  - 未开始执行时，优先级低于 Microtask
+3. Microtasks（Promise）
+  - 顺序执行
+  - 当前调用栈没有优先级高的同步代码或者没有正在执行的逻辑
+  - 当 Task 未开始执行时，优先级更高
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 12, 2024 15:48</small></div>
       
