@@ -469,5 +469,20 @@ outer.addEventListener("click", onClick);
   - 当前调用栈没有优先级高的同步代码或者没有正在执行的逻辑
   - 当 Task 未开始执行时，优先级更高
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 12, 2024 15:48</small></div>
+## 193.精读《React Server Component》
+
+- `*.server.js`，服务端组件，返回时 DSL 结构，跟 Next.js 不同
+  - 优势，拥有服务端 API 能力，不返回非必要依赖项，SEO
+- `*.client.js`，客户端组件
+- `*.js`，取决于调用者
+
+与传统服务端渲染的区别：
+- 保持前端状态
+- 语言一致性，C/S 端都可以使用 JS
+- 使用现有前端生态，npm、JSX。。。
+
+## 194.精读《算法基础数据结构》
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 17, 2024 00:02</small></div>
       
