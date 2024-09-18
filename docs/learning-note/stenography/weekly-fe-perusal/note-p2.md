@@ -312,6 +312,39 @@ class VisibleObserver extends AbstractVisibleObserver {
 
 ```
 
+## 157. 精读《如何比较 Object 对象》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 11, 2024 10:52</small></div>
+1. 引用对比
+  - `===`
+  - `==` 
+  - `Object.is()`
+2. 手动对比，自定义函数，对比obj的某些键值对
+3. 浅对比，对比obj第一层的引用
+4. 深对比，递归对比obj的键值对
+
+## 158. 精读《Typescript 4》
+
+```ts
+// 1. 可变元组类型
+type Arr = readonly any[];
+
+function concat<T extends Arr, U extends Arr>(arr1: T, arr2: U): [...T, ...U] {
+  return [...arr1, ...arr2];
+}
+// 2. 元组标记（函数参数类型定义）
+type Foo = [first: number, second?: string, ...rest: any[]];
+// 3. Class 从构造函数推断成员变量类型（直接赋值），如果是通过函数则可能不会自动识别，需要用 !: 显式声明
+// 4. 短路赋值
+a &&=b; // a && (a = b)
+a ||=b; // a || (a = b)
+a ??=b; // a ?? (a = b)
+// 5. Catch 的 error 可以是 unknown 类型
+// 6. 自定义 JSX 工厂 ？ 自定义 jsx 的解析函数，脱离 react 使用 jsx
+// 7. 其他
+// 支持 @deprecated 注释，局部 TS server 快速启动解析，将 package.json 的中 deps 作为优先导入，不能覆盖父类的 getter 和 setter，delete 删除的属性必须定义为 optional
+```
+
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 11, 2024 17:46</small></div>
       
