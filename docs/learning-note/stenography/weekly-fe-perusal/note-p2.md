@@ -540,6 +540,13 @@ outer.addEventListener("click", onClick);
 8. 并查集，判断多个元素之间是属于某个集合
 9. 布隆过滤器，快速过滤不存在数据（不完整过滤），使用二进制判断
 
+## 195.精读《新一代前端构建工具对比》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 18, 2024 17:27</small></div>
+1. esbuild，go 语言编写，没有 AST 操作能力，有 bundler（编译） 和 minifier（压缩）
+2. snowpack，清亮 bundless 方案，利用浏览器的 ESM Import 特性
+3. vite，一站式构建，bundless
+4. wmr，preact 版 vite
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 18, 2024 17:43</small></div>
       
