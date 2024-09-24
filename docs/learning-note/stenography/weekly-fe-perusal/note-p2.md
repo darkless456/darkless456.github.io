@@ -547,6 +547,133 @@ outer.addEventListener("click", onClick);
 3. vite，一站式构建，bundless
 4. wmr，preact 版 vite
 
+## 2.精读《模态框的最佳实践》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 18, 2024 17:43</small></div>
+模态框作用
+- 抓住用户注意力
+- 需要用户输入
+- 显示额外的信息
+
+模态框组成
+- 退出，鼠标按钮、键盘按键、内容区域之外
+- 描述性标题
+- 动作按钮，避免用户对按钮操作感到迷惑，如一个取消操作的模态框内的取消按钮
+- 大小与位置，建议视窗中间偏上，因为移动端如果太低的话可能失去一些信息
+- 焦点，切换键盘焦点到模态框，accessibility
+- 友好的触发方式
+
+对可访问性的思考 accessibility
+- 用户可能没有常规输入设备（鼠标、键盘），使用语音控制等非常规手段，如何操作
+- 触屏支持
+- 横向滚动条，尤其没有触控板时
+- 键盘缩放和触控板缩放的表现
+
+## 20.精读《Nestjs》文档
+
+```ts
+// controller
+@Controller()
+export class UsersController {
+  constructor(private usersService: UsersService) {}
+
+  @Get('users')
+  getAllUsers(req: Request, res: Response, next: NextFunction) {
+    return this.usersService.getAllUsers();
+  }
+
+  @Get('/:id')
+  getUser(
+    @Response() res,
+    @Param('id') id,
+  ) {
+    const user = await this.usersService.getUser(id);
+    res.status(HttpStatus.OK).json(user);
+  }
+}
+// service
+@Injectable()
+export class UsersService {
+  getAllUsers() {
+    return [];
+  }
+}
+// module
+@Module({
+  controllers: [ UsersController ], // 声明 controllers
+  providers: [ UsersService ], // 声明 services，可以被注入
+})
+export class ApplicationModule {}
+```
+
+
+```ts
+// Typeorm 配合 class-validator 做校验
+@Entity()
+export class Card {
+  @PrimaryGeneratedColumn({
+    comment: '主键',
+  })
+  id: number;
+
+  @Column({
+    comment: '名称',
+    length: 30,
+    unique: true,
+  })
+  name: string = 'nick';
+
+  @Column({
+    comment: '配置 JSON',
+    length: 5000,
+  })
+  @Validator.IsString({ message: '必须为字符串' })
+  @Validator.Length(0, 5000, { message: '长度在 0~5000' })
+  content: string;
+
+  @OneToMany(type => Comment, comment => comment.user)
+  comments?: Comment[];
+}
+
+@Entity()
+export class Comment {
+  @PrimaryGeneratedColumn({
+    comment: '主键',
+  })
+  id: number;
+
+  @ManyToOne(type => User, user => user.Comments)
+  @JoinColumn()
+  user: User;
+}
+```
+
+```ts
+// 新增实体校验全部字段；更新时，只校验相关字段
+@EventSubscriber()
+export class EverythingSubscriber implements EntitySubscriberInterface<any> {
+  // 插入前校验
+  async beforeInsert(event: InsertEvent<any>) {
+    const validateErrors = await validate(event.entity);
+    if (validateErrors.length > 0) {
+      throw new HttpException(getErrorMessage(validateErrors), 404);
+    }
+  }
+
+  // 更新前校验
+  async beforeUpdate(event: UpdateEvent<any>) {
+    const validateErrors = await validate(event.entity, {
+      // 更新操作不会验证没有涉及的字段
+      skipMissingProperties: true,
+    });
+    if (validateErrors.length > 0) {
+      throw new HttpException(getErrorMessage(validateErrors), 404);
+    }
+  }
+}
+```
+
+> 我们执行任何 CRUD 语句，统一做了错误处理，当校验失败或者数据库操作失败时，会自动终止执行后续代码
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 24, 2024 17:50</small></div>
       
