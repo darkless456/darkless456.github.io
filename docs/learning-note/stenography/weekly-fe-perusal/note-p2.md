@@ -674,6 +674,29 @@ export class EverythingSubscriber implements EntitySubscriberInterface<any> {
 
 > 我们执行任何 CRUD 语句，统一做了错误处理，当校验失败或者数据库操作失败时，会自动终止执行后续代码
 
+## 204.精读《默认、命名导出的区别》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 24, 2024 17:50</small></div>
+1. 导入和导出都是引用时，最终结果才是引用
+2. 导入时，对象解构会导致引用失效，如 `let { ... } = await import './module.js' `
+> 参考 JS 中复制对象后再解构
+3. `export default ...` 导出是值复制，**对于函数等复杂对象也适用（复制内存而非复制指针）**
+4. 对于函数，3 中的值复制相当于重新定义函数，函数声明会被提升
+
+## 205.精读《JS with 语法》
+
+`with` 的作用是改变上下文，strict 模式下是禁止使用的。业务代码不推荐使用
+```js
+with(console) {
+  with(['a', 'b', 'c']) {
+    log(join('')); // abc
+  }
+}
+```
+
+非业务领域引用：
+1. sandbox，利用 with 限制可访问上下文。
+2. 模板引擎中，注入数据
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at October 8, 2024 17:41</small></div>
       
