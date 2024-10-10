@@ -674,6 +674,30 @@ export class EverythingSubscriber implements EntitySubscriberInterface<any> {
 
 > 我们执行任何 CRUD 语句，统一做了错误处理，当校验失败或者数据库操作失败时，会自动终止执行后续代码
 
+## 202.精读《React 18》
+
+3 个新特性：
+
+1. Automatic batching
+  - 合并多次状态现在支持 promise、timeout、event 回调
+  - 状态更新后立即重渲染，在 React.flushSync 回调中执行更新
+2. Concurrent APIS
+```js
+import { useTransition } from "react";
+const [isPending, startTransition] = useTransition();
+
+// 紧急更新：
+setInputValue(input);
+
+// 标记回调函数内的更新为非紧急更新：可能会被上面的紧急更新打断
+startTransition(() => {
+  setSearchQuery(input);
+});
+```
+3. SSR for Suspense
+  - 管道式SSR，Suspense 包裹的区块，服务端渲染时不会阻塞 fallback 内容加载，（异步）取数完成后将HTML内容传到前端页面，此时没有完成 hydration
+  - 按需hydration，从原来全量改成分步进行，提前监听用户事件（点击），抢先对事件区域执行 hydration
+
 ## 204.精读《默认、命名导出的区别》
 
 1. 导入和导出都是引用时，最终结果才是引用
@@ -698,5 +722,5 @@ with(console) {
 2. 模板引擎中，注入数据
 
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at October 8, 2024 17:41</small></div>
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at October 10, 2024 22:42</small></div>
       
