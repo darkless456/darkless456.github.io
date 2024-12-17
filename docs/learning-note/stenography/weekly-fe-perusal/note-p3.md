@@ -63,6 +63,35 @@ LOD(Level of Detail)，数据详细级别。LOD 表达式，在一个查询中�
 - 多进程，资源消耗大，稳定性好，高性能设备
 - 弹性架构，可以在不同进程架构中切换
 
+6. 浏览器路由跳转
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at November 14, 2024 17:32</small></div>
+_普通跳转_
+- browser process 的 UI thread **响应用户输入**，并判断是否为合法网址。
+  > 当输入时搜索协议时，分发到另外的服务处理
+- UI thread 通知 Network thread **获取网页内容**，Network thread 寻找合适协议处理网络请求，如：DNS 协议寻址，TLS 协议建立安全链接。
+  > 如果遇到 301 重定向，通知 UI thread 重新走第二步。
+- Network thread **读取到响应头信息**，包含 `Content-Type` 表示返回内容格式，如果是 HTML，network thread 将数据传给 renderer process 处理。
+  > 此时还会校验安全性，比如 [CORB](https://www.chromium.org/Home/chromium-security/corb-for-developers/) 或 [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) 问题。
+- 触发 render。一旦所有检查完成，Network thread 通知 UI thread 已准备好跳转（此时并没有加载完所有数据，只检查了响应头），UI thread 通知 renderer process 开始渲染。
+  > 为了提升性能， UI thread 再通知 Network thread 的同时会实例化一个 renderer process 等着，一旦上一步检查完毕立即进入渲染阶段，如失败则丢弃该实例化 renderer process。
+- 确认导航。上一步之后 browser process 通过 IPC 像 renderer process 传送 stream 数据。
+  > 此时导航被确认，浏览器的各个状态（导航状态，前进后退历史）被修改，同时方便 tab 关闭后快速恢复，会话记录被保存在硬盘。
+- 加载完成。当 renderer process 加载完成，通知 browser process `onLoad` 事件，此时浏览器完成加载，loading 小时，触发各种 onLoad 回调。
+  > 此时 JS 可能还在加载远程资源
+
+_跳转到其他网站_
+- 执行普通跳转前，还会响应 `beforeunload` 事件，这个事件注册在 renderer process, 所以 browser process 会检查 renderer process 是否注册事件响应。注册该响应会拖慢关闭 tab 的速度。如无需要勿注册。
+- **如果跳转是由 JS 发起的**，执行跳转由 renderer process 触发，browser process 执行普通跳转流程。当执行跳转是，会触发原站点的 `unload` 事件，有旧的 renderer process 响应，而新站点会创建新的 renderer process 渲染。当旧网页全部关闭后，销毁就的 renderer process。
+  > 一个 tab 内，在跳转时，可能存在多个 renderer process。
+
+_Service Worker_
+- [Service Worker](https://developer.chrome.com/docs/workbox/service-worker-overview/) 可以在页面加载前执行（业务逻辑，改变页面内容），浏览器把它实现在 renderer process 中。
+- 当 Service Worker 被注册后，会被丢到一个作用域中，UI thread 执行时会检查该作用域是否注册 Service Worker，如有，则 network thread 会创建 renderer process 执行 Service Worker，网络响应也会被 Service Worker 接管
+  > [Navigation Preload](https://web.dev/blog/navigation-preload)，UI thread 会在检查是否注册 Service Worker 的同时通知 network thread 发起请求。
+
+7. 页面渲染（Renderer Process）
+> HTML, CSS, JS 基本都有 renderer process 处理，部分 JS 可能放在 worker 线程执行。
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 17, 2024 18:00</small></div>
       
