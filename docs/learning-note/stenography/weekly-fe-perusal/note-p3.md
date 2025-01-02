@@ -126,7 +126,45 @@ LOD(Level of Detail)，数据详细级别。LOD 表达式，在一个查询中�
 
     事件合并，浏览器会合并高频触发的事件，如滚动，避免事件阻塞。如果不希望丢失中间状态，使用：`getCoalescedEvents`
 
+## 238.精读《不再需要 JS 做的 5 件事》
+
+- 使用 CSS 控制 SVG 动画，控制线条虚实
+- Hover 时出现的 sidebar，伪类:hover，tab 选中 :focus-within
+- sticky position, 在父容器内固定定位
+- 手风琴菜单，`<details`> 标签
+- 暗色主题，判断系统主题，`@media(prefers-color-theme: light/dark/nno-preference)`
+- 幻灯片滚动
+    ```css
+    .parent {scroll-snap-type: y mandatory;} 
+    .child {scroll-snap-align: start}
+    ```
+
+## 239.精读《JS 数组的内部实现》
+
+- 快类型：`[Packed(连续有值), Holey（稀散）]_[SMI（32位整型）, Double（浮点）, ''（复合类型）]_Elements`
+- 慢类型：`Dictionary_Elements` 字典模式，节省空间，额外查询消耗
+- 快类型可自动降级且不可逆；快慢类型可转换，取决于节省空间是否超过50%
+
+## 240.精读《React useEvent RFC》
+
+`useEvent`，回调函数不变引用，但可以获取最新值。（绕过依赖检测）
+
+## 242.精读《web reflow》
+
+触发时机：
+- 元素位置发生变化时
+- 获取元素/鼠标位置，尺寸信息，为保证准确，需要reflow
+- 元素focus/select，确定元素当前状态
+- innerText
+- contenteditable 的元素
+
+优化：
+- 合并操作
+- 读写分离
+- fastdom 库，在window.requestAnimationFrame 时机执行
 
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 18, 2024 17:25</small></div>
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at January 2, 2025 17:35</small></div>
       
