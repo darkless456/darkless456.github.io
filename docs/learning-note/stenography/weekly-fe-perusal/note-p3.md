@@ -163,8 +163,16 @@ LOD(Level of Detail)，数据详细级别。LOD 表达式，在一个查询中�
 - 读写分离
 - fastdom 库，在window.requestAnimationFrame 时机执行
 
+## 254.精读《对前端架构的理解 - 分层与抽象》
+
+- 业务模块的架构设计，从需求出发设计业务子模块，定义彼此的职责和关系
+- 模块划分取决于业务特定，模块分层取决于业务拓展需求
+- 冯诺伊曼架构 - 计算、存储、扩展（输入输出）
+- 架构设计也要解决代码一致性问题（可维护性）
+- 分层是架构设计的重点，需要根据业务动态变化
+- 抽象是架构设计的难点，不要纠结于完美的抽象
+- 总结：业务变化驱动架构不断演变
 
 
-
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at January 2, 2025 17:35</small></div>
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at January 3, 2025 17:02</small></div>
       
