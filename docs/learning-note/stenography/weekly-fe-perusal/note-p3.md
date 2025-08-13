@@ -173,6 +173,20 @@ LOD(Level of Detail)，数据详细级别。LOD 表达式，在一个查询中�
 - 抽象是架构设计的难点，不要纠结于完美的抽象
 - 总结：业务变化驱动架构不断演变
 
+## 263.精读《我们为何弃用 css-in-js》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at January 3, 2025 17:02</small></div>
+优点：
+- 无全局样式冲突，模块化能力
+- 和普通 JS 代码一起管理
+- 支持 JS 变量
+
+缺点：
+- 运行时性能，React 18 的调度机制下，在运行时插入样式会暂停渲染，等解析完样式再继续
+- 样式优先级无法自定义，class优先级有 header 定义顺序决定，而非 classname 顺序决定
+
+## 29.精读《JS 中的内存管理》
+
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at August 13, 2025 17:29</small></div>
       
