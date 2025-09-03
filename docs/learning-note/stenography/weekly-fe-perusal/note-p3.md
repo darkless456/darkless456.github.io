@@ -237,6 +237,231 @@ git cat-file -t <hash> # 查看对象类型
 git reflog # 查看引用日志，找到丢失的分支或提交
 ```
 
+## 52.精读《图解 ES 模块》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at August 28, 2025 17:17</small></div>
+ES 模块化的工作机制
+
+1. 静态分析：在编译时确定模块之间的依赖关系
+2. 代码分割：按需加载模块，优化性能
+3. 作用域隔离：每个模块都有自己的作用域，避免变量冲突
+4. 导入导出：使用 `import` 和 `export` 语法进行模块之间的交互
+
+与 CJS 的区别
+
+1. ES 模块是静态的，CJS 是动态的
+2. ES 模块支持异步加载，CJS 是同步加载
+3. ES 模块有自己的作用域，CJS 共享作用域
+4. ES 模块使用 `import` 和 `export`，CJS 使用 `require` 和 `module.exports`
+
+## 53.精读《插件化思维》
+
+插件化思维是一种将系统分解为多个可插拔模块的设计理念。通过定义清晰的接口和契约，使得各个模块之间可以独立开发、测试和部署。
+
+如何实现插件化的框架设计：
+
+1. **定义插件接口**：为插件定义统一的接口和规范，确保各个模块之间的兼容性。
+2. **实现事件机制**：通过事件机制实现模块之间的通信和协作。
+3. **使用依赖管理工具**：使用依赖管理工具（如 npm）管理插件的依赖关系。
+4. **支持热更新**：支持插件的热更新，提升开发体验。
+
+## 57.精读《现代 js 框架存在的根本原因》
+
+现在框架最重要的帮助是保持 UI 与 状态的同步。
+两种方式：
+1. 重渲染组件，React，当状态改变后，生成新的虚拟DOM🌲，最终改变当前的真实DOM，成为reconciliation
+2. 监听修改，Angular/Vue，状态改变触发对应DOM的Value更新
+
+三个框架互相借鉴，一般会混合使用上述两种方式。
+
+```md
+// 评论
+1. 个人觉得浏览器应该做的是更底层的事，比如新的人机交互，更快的加载和渲染速度等等，而UI与state同步的事，其实加上一个中间层就能搞定，react、vue等都是一个中间层，这一层应该开放给开发者进行处理。
+2. 状态与UI同步的问题我个人理解是一个状态机处理状态的问题，整个应用是一个状态机，处理不同的输入。而能把应用变成状态机的只能是js，html和css都不行。所以以js为中心进行前端开发是趋势，除非找到新的编程模型
+```
+
+## 59.精读《如何利用 Nodejs 监听文件夹》
+
+```js
+// 轮询检测文件，有延迟
+fs.watchFile(dir, (curr, prev) => {
+  console.log(`File changed: ${dir}`);
+});
+```
+
+```js
+// 为了抹平操作系统差异，回调执行次数不确定
+fs.watch(dir, (eventType, filename) => {
+  console.log(`File changed: ${filename}`);
+  // 优化判断逻辑
+  // 1. 对比文件修改时间
+  // 2. 校验文件md5
+  // 3. 延迟判断（debounce）
+});
+```
+
+## 6.精读《JavaScript 错误堆栈处理》
+
+1. 抛出标准的 Error 对象
+2. Promise 使用 reject 代替 throw 抛出错误，避免未捕获的异常
+3. 监控客户端错误，`try...catch`（无法捕捉语法错误和全局错误）,使用 `window.onerror` 进行全局错误处理。
+4. `window.onerror` 跨域解决方案
+    - `<script>` 标签添加 `crossorigin` 属性
+    - 服务器端设置 CORS 响应头
+
+## 60.精读《如何在 nodejs 使用环境变量》
+
+1. 命令行 `PORT=3000 node app.js`
+2. `.env` 文件 + `.dotenv` 包
+3. 生产环境，使用专门的云服务
+
+## 62.精读《JS 引擎基础之 Shapes and Inline Caches》
+
+JS 引擎的运作机制分为 AST 分析和字节码（机器码）生成。
+
+JS 引擎为了提高性能，采用了多种优化手段，其中之一就是形状（Shapes）和内联缓存（Inline Caches）。
+
+- 形状（Shapes）：JS 引擎会为对象创建一个形状描述符，记录对象的结构信息（如属性名、属性类型等），以便快速访问。
+- 内联缓存（Inline Caches）：JS 引擎会在函数调用时记录下第一次调用的形状信息，以后再调用时可以直接使用缓存，提高性能。
+
+> `Proxy` vs `Object.defineProperty`， 后者会破坏JS引擎对数据做的优化
+
+## 76.精读《谈谈 Web Workers》
+
+```js
+// 主线程
+const worker = new Worker('worker.js');
+worker.postMessage('Hello, worker!');
+worker.onmessage = function(event) {
+  console.log(event.data);
+};
+worker.terminate();
+
+const ab = new ArrayBuffer(1);
+worker.postMessage(ab, [ab]); // 传输所有权（对象引用），主线程不再拥有 ab
+```
+
+```js
+// worker 线程
+self.onmessage = function(event) {
+  console.log(event.data);
+  self.postMessage('Hello, main thread!');
+};
+self.postMessage('Hello, main thread!');
+```
+
+创建方式：
+1. 手动创建
+2. 通过 URL.createObjectURL() 创建
+
+```js
+const blob = new Blob([`self.onmessage = function(event) {
+  console.log(event.data);
+  self.postMessage('Hello, main thread!');
+};
+self.postMessage('Hello, main thread!');`], { type: 'application/javascript' });
+const url = URL.createObjectURL(blob);
+const worker = new Worker(url);
+```
+
+## 83.精读《React16 新特性》
+
+1. render 支持返回数组和字符串
+2. Error Boundaries，组件捕获错误
+3. createPortal，跨组件树传递子节点
+4. 支持自定义DOM属性
+5. 支持 Fiber 架构，提升性能。更新过程分为两个阶段：
+    1. Reconciliation 阶段，构建 Fiber 树，可以被打断
+    2. Commit 阶段，提交更新，影响真实DOM，不可被打断
+6. Call Return，父组件根据子组件的的回调信息去渲染子组件。 适用场景：瀑布流布局
+    1. 父返回对call的调用，`unstable_createCall(props.children, callback, props)`
+    2. 子返回对return的调用，`unstable_createReturn(obj)`，`obj` 是call的回调参数
+7. Fragment，允许在不增加额外节点的情况下返回多个子元素
+8. `createContext`，用于跨组件传递数据
+9. `createRef/forwardRef`，用于组件间的引用转发
+10. 标记 reconciliation 阶段生命周期函数为不安全的
+    - component**Will**Mount
+    - component**Will**ReceiveProps
+    - **should**ComponentUpdate
+    - component**Will**Update
+11. 新增生命周期函数
+    - static getDerivedStateFromProps，根据 props 更新 state
+    - getSnapshotBeforeUpdate，组件在更新前获取快照
+    - component**Did**Catch，组件捕获错误
+12. StrictMode，帮助识别不安全的生命周期函数、过时的 API 和其他潜在问题
+13. Profiler 实验性 API，用于测量组件渲染性能
+14. React.memo()/React.lazy/Suspense，支持组件的懒加载和性能优化
+15. static contextType，类组件中使用 context 的便捷方式
+16. static getDerivedStateFromError，组件捕获子组件错误并更新 state
+17. Hooks（React 16.8）
+    - useState，函数组件中的状态管理
+    - useEffect，副作用处理
+    - useContext，使用 context
+    - useReducer，类似 Redux 的状态管理
+    - useCallback，缓存函数引用
+    - useMemo，缓存计算结果
+    - useRef，创建可变引用
+    - useImperativeHandle，自定义暴露给父组件的实例值
+    - useLayoutEffect，与 DOM 交互的副作用处理
+    - useDebugValue，调试自定义 Hook
+18. Concurrent Mode（并发模式），React 16 引入的实验特性，支持更细粒度的渲染控制和更好的用户体验
+
+## 86.精读《国际化布局 - Logical Properties》
+
+- `inline-start` 和 `inline-end`，分别表示行内开始和行内结束，取代了 `left` 和 `right`。(display: inline)
+- `block-start` 和 `block-end`，分别表示块级开始和块级结束，取代了 `top` 和 `bottom`。(display: block)
+- 使用 css grid 与 flexbox 布局方案的网页，将在支持的浏览器上自动享受国际化布局调整，不需要改变语法。
+- `writing-mode` 排版，`direction` 文字对齐
+
+## 87.精读《setState 做了什么》
+
+`react` 包定义接口，react-dom、react-native 实现接口。
+- setState, ins.updater = ReactDOMUpdater/ReactNativeUpdater/ReactDOMServerUpdater
+- useHook, 实现 dispatch 接口
+
+## 88.精读《Caches API》
+
+Caches API 是一个用于在浏览器中存储和检索请求及其响应的接口。它提供了一种简单的方式来缓存网络请求，以提高应用程序的性能和离线体验。
+
+### 主要特点
+
+1. **缓存存储**：Caches API 允许将请求及其响应存储在缓存中，以便后续使用。缓存可以是持久性的，也可以是临时的。
+2. **请求拦截**：通过 Service Worker，可以拦截网络请求并返回缓存中的响应，从而实现离线支持和快速加载。
+3. **版本管理**：Caches API 支持缓存版本管理，可以轻松地更新和删除旧的缓存。
+
+### 使用示例
+
+```js
+// 打开或创建一个缓存
+caches.open('my-cache').then(cache => {
+  // 将请求及其响应存储在缓存中
+  cache.put('/api/data', new Response(JSON.stringify({ data: 'Hello, world!' })));
+});
+
+// 从缓存中检索响应
+caches.match('/api/data').then(response => {
+  if (response) {
+    // 缓存中存在响应
+    response.json().then(data => {
+      console.log(data);
+    });
+  }
+});
+
+// 结合 service worker 使用
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
+  );
+});
+```
+
+### 注意事项
+
+- Caches API 只能在 HTTPS 环境下使用，或者在 localhost 上进行开发。
+- 缓存的大小是有限制的，浏览器会根据策略自动清理旧的缓存。
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 3, 2025 18:23</small></div>
       
