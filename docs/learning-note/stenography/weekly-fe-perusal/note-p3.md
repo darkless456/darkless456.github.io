@@ -462,6 +462,50 @@ self.addEventListener('fetch', event => {
 - Caches API 只能在 HTTPS 环境下使用，或者在 localhost 上进行开发。
 - 缓存的大小是有限制的，浏览器会根据策略自动清理旧的缓存。
 
+## 89.精读《如何编译前端项目与组件》
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 3, 2025 18:23</small></div>
+- 项目构建，使用复杂的构建约束策略，只要最终结果符合浏览器规范就行
+- 组件构建，采用相对简单的办法，确保代码的通用性
+
+## 96.精读《useEffect 完全指南》
+
+函数组件特性：
+- 每次render 都有自己的 state 和 props 快照（capture value）
+- 每次render 都有自己的事件处理函数快照
+- 每次render 都有自己的 effect 快照
+- `useRef` 可以绕过快照限制，实现跨 render 共享数据
+- `useEffect` 依赖项变化时，执行 effect 回调。依赖项可以是 state、props 或者其他变量（例如对象的引用）
+
+## 97.精读《编写有弹性的组件》
+
+1. 不要阻塞数据流，不要将接收到的props 本地化
+2. 不要阻塞副作用的数据流
+3. 不要因为性能优化而阻塞数据流（类组件中自定义的 shouldComponentUpdate）
+4. 时刻准备渲染
+5. 不要有单例组件
+6. 隔离本地状态
+
+```js
+// 优化小手段：如果父组件依赖比较多子组件的反向控制，可以使用 useReducer 代替 useState
+const AppDispatchContext = React.createContext(null);
+const appReducer = (state, action) => {
+  switch (action.type) {
+    // ...
+  }
+  return newState;
+}
+
+const App = memo(function App(props) {
+  const [state, dispatch] = useReducer(appReducer, initialState);
+  return (
+    <AppDispatchContext.Provider value={dispatch}>
+      <ChildComponent {...props} state={state} />
+    </AppDispatchContext.Provider>
+  );
+});
+
+```
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 4, 2025 16:45</small></div>
       
