@@ -505,7 +505,27 @@ const App = memo(function App(props) {
 });
 
 ```
+## 4.精读《AsyncAwait 优越之处》
+
+Async/Await 优势：
+- 语法简洁，易读性强
+- 错误处理方便，使用 try/catch
+- 调试方便
+
+局限：
+- 只能处理单个异步操作，多个操作需要借助Promise.all
+- 不能取消异步操作
+- 需要浏览器支持
+
+## 72.精读《REST, GraphQL, Webhooks, & gRPC 如何选型》
+
+- REST：无状态的数据传输结构，适用于通用、快速迭代和标准化语义的场景。
+- gRPC：轻量的传输方式，特殊适合对性能高要求或者环境苛刻的场景，比如 IOT。
+- GraphQL: 请求者可以自定义返回格式，某些程度上可以减少前后端联调成本。
+- Webhooks: 推送服务，主要用于服务器主动更新客户端资源的场景。
 
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 4, 2025 16:45</small></div>
+
+
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 7, 2025 22:27</small></div>
       
