@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
     
-# Perusal Series
+# Perusal Series - 3
 
 ## 214.精读《web streams》
 
@@ -527,5 +527,5 @@ Async/Await 优势：
 
 
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 7, 2025 22:27</small></div>
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at September 9, 2025 16:26</small></div>
       
