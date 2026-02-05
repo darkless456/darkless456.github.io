@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
     
 # 双隧道交易判断趋势及买卖点
@@ -77,7 +77,7 @@ sidebar_position: 1
 
 画线：
 
-1. 选取趋势**最低点**和**最高点**
+1. 选取趋势**最低点（震荡期）**和**最高点**
 2. 两点画斐波那契回调
 
 备注：
@@ -111,6 +111,18 @@ sidebar_position: 1
 
 - 成交量小但成交额大，反映主力在行动
 
+## KDJ
+
+- 作为情绪指标，观察 K 和 J
+  - K`>`80 J`>`100 超买
+  - K`<`20 J`<`0 超卖
+- 作为趋势指标，观察三条线
+  - 金叉 `<` 20，上涨趋势中重点关注
+  - 死叉 `>` 80，下跌趋势中重点关注
+- 作为能量指标，只观察 J
+  - 形态背离，上涨趋势时注意超卖（可能时买点），下跌趋势时注意超买（可能会继续下跌）
+  - 能量消耗103原则，J`>`100 或 J`<`0 连续3天持续，会有能量消耗
+
 ## 箴言
 
 - 市场交易的本质：**概率**
@@ -118,5 +130,5 @@ sidebar_position: 1
 - 科技板块一直是**市场情绪的重要风向标**，若科技及泛科技板块走势疲软，反弹将难以持续。若行情想持续，则科技必须保持强势
 
 
-<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at December 13, 2025 23:48</small></div>
+<div style={{textAlign: 'right'}}><small style={{color: 'grey'}}>last modified at February 5, 2026 23:59</small></div>
       
